@@ -1,5 +1,5 @@
 {
- "autoname": "customer_name",
+ "autoname": "field:customer_name",
  "creation": "2021-02-22 21:14:26.304761",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -24,7 +24,8 @@
    "in_list_view": 1,
    "label": "Phone Number",
    "length": 10,
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "address_section",
@@ -49,10 +50,11 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Customer Name",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   }
  ],
- "modified": "2021-02-22 21:20:19.849659",
+ "modified": "2021-02-22 22:10:35.561625",
  "modified_by": "Administrator",
  "module": "Textile",
  "name": "Customer",
@@ -71,7 +73,6 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "search_fields": "phone_number",
  "sort_field": "modified",
  "sort_order": "DESC",

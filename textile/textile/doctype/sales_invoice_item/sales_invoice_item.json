@@ -1,0 +1,76 @@
+{
+ "creation": "2021-02-22 22:46:08.237911",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_name",
+  "qty",
+  "unit",
+  "price",
+  "discount",
+  "tax",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty",
+   "precision": "1"
+  },
+  {
+   "fetch_from": "item_name.unit",
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "label": "Unit",
+   "options": "Unit"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Price",
+   "precision": "2"
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Float",
+   "label": "Discount",
+   "precision": "2"
+  },
+  {
+   "fetch_from": "item_name.tax",
+   "fieldname": "tax",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Tax%",
+   "precision": "2"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Amount"
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-02-22 23:01:30.982341",
+ "modified_by": "Administrator",
+ "module": "Textile",
+ "name": "Sales Invoice Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

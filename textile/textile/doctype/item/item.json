@@ -1,0 +1,96 @@
+{
+ "autoname": "field:item_name",
+ "creation": "2021-02-22 21:40:16.341132",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_details_section",
+  "item_name",
+  "unit",
+  "column_break_4",
+  "item_code",
+  "price_details_section",
+  "price",
+  "column_break_8",
+  "tax"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_details_section",
+   "fieldtype": "Section Break",
+   "label": "Item Details"
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Unit",
+   "options": "Unit"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "unique": 1
+  },
+  {
+   "fieldname": "price_details_section",
+   "fieldtype": "Section Break",
+   "label": "Price Details"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Price",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tax",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Tax",
+   "options": "\n0%\n0.25%\n3%\n5%\n12%\n18%\n28%"
+  }
+ ],
+ "modified": "2021-02-22 22:08:38.560046",
+ "modified_by": "Administrator",
+ "module": "Textile",
+ "name": "Item",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
