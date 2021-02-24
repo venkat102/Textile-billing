@@ -7,7 +7,7 @@
  "field_order": [
   "customer",
   "column_break_2",
-  "customer_invoice_numer",
+  "customer_invoice_number",
   "sales_invoice_number",
   "date",
   "transfered_by",
@@ -35,11 +35,6 @@
   {
    "fieldname": "column_break_2",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "customer_invoice_numer",
-   "fieldtype": "Read Only",
-   "label": "Customer Invoice Numer"
   },
   {
    "fieldname": "sales_invoice_number",
@@ -114,10 +109,15 @@
   {
    "fieldname": "column_break_11",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_invoice_number",
+   "fieldtype": "Read Only",
+   "label": "Customer Invoice Number"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-02-22 23:00:15.381219",
+ "modified": "2021-02-24 23:31:23.436322",
  "modified_by": "Administrator",
  "module": "Textile",
  "name": "Sales Invoice",
