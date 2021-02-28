@@ -1,25 +1,27 @@
 {
- "autoname": "format:{customer}-{customer_invoice_numer}",
- "creation": "2021-02-22 22:58:21.690232",
+ "autoname": "format:{customer}-{#####}",
+ "creation": "2021-02-28 21:15:32.113932",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "customer",
+  "payment_method",
   "column_break_2",
-  "customer_invoice_number",
+  "customer_invoice_no",
   "sales_invoice_number",
   "date",
   "transfered_by",
   "section_break_7",
   "items",
   "section_break_9",
-  "payment_method",
-  "column_break_11",
-  "round_off",
-  "amount",
-  "discount",
   "tax",
+  "sgst",
+  "cgst",
+  "column_break_11",
+  "amount",
+  "sgst_amount",
+  "cgst_amount",
   "total_price",
   "amended_from"
  ],
@@ -33,13 +35,20 @@
    "reqd": 1
   },
   {
+   "fieldname": "payment_method",
+   "fieldtype": "Link",
+   "label": "Payment Method",
+   "options": "Mode of Payment"
+  },
+  {
    "fieldname": "column_break_2",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "sales_invoice_number",
-   "fieldtype": "Read Only",
-   "label": "Sales Invoice Number"
+   "fieldtype": "Data",
+   "label": "Sales Invoice Number",
+   "read_only": 1
   },
   {
    "fieldname": "date",
@@ -59,23 +68,33 @@
    "fieldname": "items",
    "fieldtype": "Table",
    "label": "Items",
-   "options": "Sales Invoice Item"
+   "options": "Sales Invoice Item",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_9",
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "payment_method",
-   "fieldtype": "Data",
-   "label": "Payment Method",
-   "options": "Mode Of Payment"
+   "fieldname": "tax",
+   "fieldtype": "Select",
+   "label": "Tax",
+   "options": "0%\n0.25%\n3%\n5%\n12%\n18%\n28%"
   },
   {
-   "default": "0",
-   "fieldname": "round_off",
-   "fieldtype": "Check",
-   "label": "Round off"
+   "fieldname": "sgst",
+   "fieldtype": "Read Only",
+   "label": "SGST %"
+  },
+  {
+   "fieldname": "cgst",
+   "fieldtype": "Read Only",
+   "label": "CGST %",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "amount",
@@ -83,14 +102,14 @@
    "label": "Amount"
   },
   {
-   "fieldname": "discount",
+   "fieldname": "sgst_amount",
    "fieldtype": "Read Only",
-   "label": "Discount"
+   "label": "SGST Amount"
   },
   {
-   "fieldname": "tax",
+   "fieldname": "cgst_amount",
    "fieldtype": "Read Only",
-   "label": "Tax"
+   "label": "CGST Amount"
   },
   {
    "fieldname": "total_price",
@@ -107,17 +126,23 @@
    "read_only": 1
   },
   {
-   "fieldname": "column_break_11",
-   "fieldtype": "Column Break"
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Sales Invoice",
+   "print_hide": 1,
+   "read_only": 1
   },
   {
-   "fieldname": "customer_invoice_number",
-   "fieldtype": "Read Only",
-   "label": "Customer Invoice Number"
+   "fieldname": "customer_invoice_no",
+   "fieldtype": "Data",
+   "in_preview": 1,
+   "label": "Customer Invoice No"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-02-24 23:31:23.436322",
+ "modified": "2021-02-28 21:53:00.026043",
  "modified_by": "Administrator",
  "module": "Textile",
  "name": "Sales Invoice",

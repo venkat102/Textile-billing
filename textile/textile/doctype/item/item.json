@@ -10,10 +10,7 @@
   "unit",
   "column_break_4",
   "item_code",
-  "price_details_section",
-  "price",
-  "column_break_8",
-  "tax"
+  "price"
  ],
  "fields": [
   {
@@ -48,30 +45,14 @@
    "unique": 1
   },
   {
-   "fieldname": "price_details_section",
-   "fieldtype": "Section Break",
-   "label": "Price Details"
-  },
-  {
    "fieldname": "price",
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Price",
    "precision": "2"
-  },
-  {
-   "fieldname": "column_break_8",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "tax",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Tax",
-   "options": "\n0%\n0.25%\n3%\n5%\n12%\n18%\n28%"
   }
  ],
- "modified": "2021-02-22 22:08:38.560046",
+ "modified": "2021-02-28 20:35:18.354790",
  "modified_by": "Administrator",
  "module": "Textile",
  "name": "Item",
@@ -90,7 +71,9 @@
    "write": 1
   }
  ],
+ "search_fields": "item_code",
  "sort_field": "modified",
  "sort_order": "DESC",
+ "title_field": "item_name",
  "track_changes": 1
 }
