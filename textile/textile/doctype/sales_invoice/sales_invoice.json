@@ -11,7 +11,7 @@
   "customer_invoice_no",
   "sales_invoice_number",
   "date",
-  "transfered_by",
+  "transport",
   "section_break_7",
   "items",
   "section_break_9",
@@ -54,11 +54,6 @@
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date"
-  },
-  {
-   "fieldname": "transfered_by",
-   "fieldtype": "Data",
-   "label": "Transfered by"
   },
   {
    "fieldname": "section_break_7",
@@ -139,10 +134,15 @@
    "fieldtype": "Data",
    "in_preview": 1,
    "label": "Customer Invoice No"
+  },
+  {
+   "fieldname": "transport",
+   "fieldtype": "Data",
+   "label": "Transport"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-02-28 21:53:00.026043",
+ "modified": "2021-03-01 11:25:18.060056",
  "modified_by": "Administrator",
  "module": "Textile",
  "name": "Sales Invoice",
