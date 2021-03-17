@@ -1,5 +1,4 @@
 {
- "actions": [],
  "autoname": "format:{customer}-{#####}",
  "creation": "2021-02-28 21:15:32.113932",
  "doctype": "DocType",
@@ -44,8 +43,27 @@
    "options": "Mode of Payment"
   },
   {
+   "default": "0",
+   "fieldname": "is_return",
+   "fieldtype": "Check",
+   "label": "Is Return"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Sales Invoice",
+   "options": "Sales Invoice"
+  },
+  {
    "fieldname": "column_break_2",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_invoice_no",
+   "fieldtype": "Data",
+   "in_preview": 1,
+   "label": "Customer Invoice No"
   },
   {
    "fieldname": "sales_invoice_number",
@@ -57,6 +75,11 @@
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date"
+  },
+  {
+   "fieldname": "transport",
+   "fieldtype": "Data",
+   "label": "Transport"
   },
   {
    "fieldname": "section_break_7",
@@ -122,46 +145,12 @@
    "options": "Sales Invoice",
    "print_hide": 1,
    "read_only": 1
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Sales Invoice",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "customer_invoice_no",
-   "fieldtype": "Data",
-   "in_preview": 1,
-   "label": "Customer Invoice No"
-  },
-  {
-   "fieldname": "transport",
-   "fieldtype": "Data",
-   "label": "Transport"
-  },
-  {
-   "default": "0",
-   "fieldname": "is_return",
-   "fieldtype": "Check",
-   "label": "Is Return"
-  },
-  {
-   "fieldname": "sales_invoice",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "Sales Invoice",
-   "options": "Sales Invoice"
   }
  ],
  "is_submittable": 1,
- "links": [],
- "modified": "2021-03-17 19:40:45.619591",
+ "modified": "2021-03-16 21:33:44.171648",
  "modified_by": "Administrator",
- "module": "Textile",
+ "module": "Sales",
  "name": "Sales Invoice",
  "owner": "Administrator",
  "permissions": [

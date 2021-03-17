@@ -15,4 +15,6 @@ def customer_count(customer):
 	return frappe.db.sql(f'''SELECT COUNT(name)+1 FROM `tabSales Invoice` WHERE customer=\'{customer}\' ''')
 
 class SalesInvoice(Document):
-	pass
+	def autoname(self):
+		if self.is_return:
+			self.name = self.sales_invoice+"-Returned"
