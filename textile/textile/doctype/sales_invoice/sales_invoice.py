@@ -14,7 +14,13 @@ def sales_invoice_count():
 def customer_count(customer):
 	return frappe.db.sql(f'''SELECT COUNT(name)+1 FROM `tabSales Invoice` WHERE customer=\'{customer}\' ''')
 
+@frappe.whitelist()
+def get_data(invoice):
+	return [frappe.db.get_value("Sales Invoice", {'name':invoice}, ["customer", "customer", "tax", "sgst", "cgst", "sgst_amount", "cgst_amount", 'amount', 'total_amount']), frappe.db.get_list("Sales Invoice Item", {'parent':invoice}, ['item_name', 'qty', 'unit' 'price', 'amount'])]
+
+@frappe.whitelist()
+def check_returned(invoice):
+	return frappe.db.exists("Sales Invoice", invoice+'-Returned')
 class SalesInvoice(Document):
 	def autoname(self):
-		if self.is_return:
-			self.name = self.sales_invoice+"-Returned"
+		pass

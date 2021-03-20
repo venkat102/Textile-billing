@@ -1,14 +1,14 @@
 {
  "actions": [],
- "autoname": "format:{customer}-{customer_ref_no}",
- "creation": "2021-03-18 23:02:32.368433",
+ "autoname": "format:PR-{MM}-{DD}-{#####}",
+ "creation": "2021-03-20 01:10:26.457462",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "customer",
+  "is_return",
+  "sales_invoice",
   "column_break_2",
-  "customer_ref_no",
   "date",
   "section_break_7",
   "items",
@@ -25,27 +25,27 @@
  ],
  "fields": [
   {
-   "fieldname": "customer",
+   "default": "0",
+   "fieldname": "is_return",
+   "fieldtype": "Check",
+   "label": "Is Return"
+  },
+  {
+   "fieldname": "sales_invoice",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Customer",
-   "options": "Customer",
-   "reqd": 1
+   "hidden": 1,
+   "label": "Purchase Invoice",
+   "options": "Purchase Invoice"
   },
   {
    "fieldname": "column_break_2",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "customer_ref_no",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_preview": 1,
-   "label": "Customer Ref No"
-  },
-  {
    "fieldname": "date",
    "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
    "label": "Date"
   },
   {
@@ -67,6 +67,7 @@
    "fieldname": "tax",
    "fieldtype": "Select",
    "in_list_view": 1,
+   "in_preview": 1,
    "label": "Tax",
    "options": "0%\n0.25%\n3%\n5%\n12%\n18%\n28%"
   },
@@ -89,6 +90,7 @@
    "fieldname": "amount",
    "fieldtype": "Read Only",
    "in_list_view": 1,
+   "in_preview": 1,
    "label": "Amount"
   },
   {
@@ -104,6 +106,8 @@
   {
    "fieldname": "total_price",
    "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "in_preview": 1,
    "label": "Total Price"
   },
   {
@@ -111,7 +115,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Estimate",
+   "options": "Purchase Invoice",
    "print_hide": 1,
    "read_only": 1
   },
@@ -120,17 +124,17 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Estimate",
+   "options": "Purchase Invoice",
    "print_hide": 1,
    "read_only": 1
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2021-03-20 01:34:58.755845",
+ "modified": "2021-03-20 01:28:28.511331",
  "modified_by": "Administrator",
  "module": "Textile",
- "name": "Estimate",
+ "name": "Purchase Invoice",
  "owner": "Administrator",
  "permissions": [
   {
@@ -147,6 +151,8 @@
    "write": 1
   },
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -157,6 +163,7 @@
    "role": "Sales User",
    "select": 1,
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

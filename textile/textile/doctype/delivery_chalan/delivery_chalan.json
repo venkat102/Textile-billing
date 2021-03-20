@@ -1,7 +1,7 @@
 {
  "actions": [],
  "autoname": "format:{customer}-{customer_ref_no}",
- "creation": "2021-03-18 23:02:32.368433",
+ "creation": "2021-03-19 00:24:53.745755",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -10,6 +10,7 @@
   "column_break_2",
   "customer_ref_no",
   "date",
+  "transport",
   "section_break_7",
   "items",
   "section_break_9",
@@ -39,7 +40,6 @@
   {
    "fieldname": "customer_ref_no",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "in_preview": 1,
    "label": "Customer Ref No"
   },
@@ -49,6 +49,11 @@
    "label": "Date"
   },
   {
+   "fieldname": "transport",
+   "fieldtype": "Data",
+   "label": "Transport"
+  },
+  {
    "fieldname": "section_break_7",
    "fieldtype": "Section Break"
   },
@@ -56,7 +61,7 @@
    "fieldname": "items",
    "fieldtype": "Table",
    "label": "Items",
-   "options": "Sales Invoice Item",
+   "options": "Delivery Chalan Item",
    "reqd": 1
   },
   {
@@ -66,7 +71,6 @@
   {
    "fieldname": "tax",
    "fieldtype": "Select",
-   "in_list_view": 1,
    "label": "Tax",
    "options": "0%\n0.25%\n3%\n5%\n12%\n18%\n28%"
   },
@@ -88,7 +92,6 @@
   {
    "fieldname": "amount",
    "fieldtype": "Read Only",
-   "in_list_view": 1,
    "label": "Amount"
   },
   {
@@ -111,26 +114,17 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Estimate",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Estimate",
+   "options": "Delivery Chalan",
    "print_hide": 1,
    "read_only": 1
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2021-03-20 01:34:58.755845",
+ "modified": "2021-03-19 22:34:46.552739",
  "modified_by": "Administrator",
  "module": "Textile",
- "name": "Estimate",
+ "name": "Delivery Chalan",
  "owner": "Administrator",
  "permissions": [
   {

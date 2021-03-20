@@ -3,12 +3,8 @@
 # For license information, please see license.txt
 
 from __future__ import unicode_literals
-import frappe
+# import frappe
 from frappe.model.document import Document
 
-@frappe.whitelist()
-def customer_count(customer):
-	return frappe.db.sql(f'''SELECT COUNT(name)+1 FROM `tabSale Order` WHERE customer=\'{customer}\' ''')
-
-class SaleOrder(Document):
+class DeliveryChalanItem(Document):
 	pass

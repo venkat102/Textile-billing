@@ -1,11 +1,12 @@
 // Copyright (c) 2021, Venkatesh and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on('Estimate', {
+frappe.ui.form.on('Purchase Invoice', {
 	onload: function(frm){
 		frappe.call({
 			method:"textile.textile.doctype.sales_invoice.sales_invoice.sales_invoice_count",
 			callback: function(res){
+				// frm.set_value("sales_invoice_number", res.message[0][0]);
 				frm.set_value("date", res.message[1]);
 				frm.refresh_field("sales_invoice_number");
 			}
@@ -14,12 +15,12 @@ frappe.ui.form.on('Estimate', {
 	customer:function(frm){
 		if(frm.doc.customer){
 			frappe.call({
-				method:"textile.textile.doctype.estimate.estimate.customer_count",
+				method:"textile.textile.doctype.sales_invoice.sales_invoice.customer_count",
 				args:{
 					'customer': frm.doc.customer
 				},
 				callback: function(res){
-					frm.set_value("customer_ref_no", res.message[0][0]);
+					frm.set_value("customer_invoice_no", res.message[0][0]);
 					frm.refresh_field("customer_invoice_no");
 				}
 			})
@@ -45,8 +46,58 @@ frappe.ui.form.on('Estimate', {
 		frm.refresh_field("sgst_amount");
 		frm.refresh_field("cgst_amount");
 		frm.refresh_field("total_price");
+	},
+	is_return:function(frm){
+		if(frm.doc.is_return){
+			frm.set_df_property("sales_invoice", 'hidden', 0);
+		}
+		else{
+			location.reload();
+		}
+	},
+	purchase_invoice:function(frm){
+		if(frm.doc.invoice_no){
+			// if(frm.doc.invoice_no.includes('Returned')){
+			// 	frappe.throw("Can not return a returned invoice");
+			// 	frm.set_value("sales_invoice",'');
+			// }
+			frappe.call({
+				method:"textile.textile.doctype.purchase_invoice.purchase_invoice.check_returned",
+				args:{'invoice':frm.doc.purchase_invoice},
+				callback:function(res){		
+					if(!res.exc){	
+						if(!res.message){
+							frappe.call({
+								method:"textile.textile	.doctype.purchase_invoice.purchase_invoice.get_data",
+								args:{'invoice': frm.doc.purchase_invoice},
+								callback:function(res){
+									console.log(res.message)
+									frm.set_value("customer", res.message[0][0]);
+									frm.set_value("discustomercount", res.message[0][1]);
+									frm.set_value("tax", res.message[0][2]);
+									frm.set_value("sgst", res.message[0][3]);
+									frm.set_value("cgst", res.message[0][4]);
+									frm.set_value("sgst_amount", res.message[0][5]);
+									frm.set_value("cgst_amount", res.message[0][6]);
+									frm.set_value("amount", res.message[0][7]);
+									frm.set_value("total_amount", res.message[0][7]);
+									frm.set_value("items", res.message[1]);
+									frm.refresh();
+								}
+							})
+						}
+						else{
+							frappe.throw("Invoice is already returned");
+							frm.set_value("invoice_no",'');
+						}
+					}
+				}
+			})
+		}
+
 	}
 });
+
 
 frappe.ui.form.on('Sales Invoice Item',{
 	item_name:function(frm, cdt, cdn){
