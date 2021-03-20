@@ -7,7 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "is_return",
-  "sales_invoice",
+  "purchase_invoice",
   "column_break_2",
   "date",
   "section_break_7",
@@ -29,13 +29,6 @@
    "fieldname": "is_return",
    "fieldtype": "Check",
    "label": "Is Return"
-  },
-  {
-   "fieldname": "sales_invoice",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "Purchase Invoice",
-   "options": "Purchase Invoice"
   },
   {
    "fieldname": "column_break_2",
@@ -127,11 +120,18 @@
    "options": "Purchase Invoice",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "purchase_invoice",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Purchase Invoice",
+   "options": "Purchase Invoice"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2021-03-20 01:28:28.511331",
+ "modified": "2021-03-20 19:45:19.512576",
  "modified_by": "Administrator",
  "module": "Textile",
  "name": "Purchase Invoice",

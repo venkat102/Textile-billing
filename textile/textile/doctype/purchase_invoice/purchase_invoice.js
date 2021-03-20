@@ -49,18 +49,14 @@ frappe.ui.form.on('Purchase Invoice', {
 	},
 	is_return:function(frm){
 		if(frm.doc.is_return){
-			frm.set_df_property("sales_invoice", 'hidden', 0);
+			frm.set_df_property("purchase_invoice", 'hidden', 0);
 		}
 		else{
 			location.reload();
 		}
 	},
 	purchase_invoice:function(frm){
-		if(frm.doc.invoice_no){
-			// if(frm.doc.invoice_no.includes('Returned')){
-			// 	frappe.throw("Can not return a returned invoice");
-			// 	frm.set_value("sales_invoice",'');
-			// }
+		if(frm.doc.purchase_invoice){
 			frappe.call({
 				method:"textile.textile.doctype.purchase_invoice.purchase_invoice.check_returned",
 				args:{'invoice':frm.doc.purchase_invoice},
@@ -72,15 +68,13 @@ frappe.ui.form.on('Purchase Invoice', {
 								args:{'invoice': frm.doc.purchase_invoice},
 								callback:function(res){
 									console.log(res.message)
-									frm.set_value("customer", res.message[0][0]);
-									frm.set_value("discustomercount", res.message[0][1]);
-									frm.set_value("tax", res.message[0][2]);
-									frm.set_value("sgst", res.message[0][3]);
-									frm.set_value("cgst", res.message[0][4]);
-									frm.set_value("sgst_amount", res.message[0][5]);
-									frm.set_value("cgst_amount", res.message[0][6]);
-									frm.set_value("amount", res.message[0][7]);
-									frm.set_value("total_amount", res.message[0][7]);
+									frm.set_value("tax", res.message[0][0]);
+									frm.set_value("sgst", res.message[0][1]);
+									frm.set_value("cgst", res.message[0][2]);
+									frm.set_value("sgst_amount", res.message[0][3]);
+									frm.set_value("cgst_amount", res.message[0][4]);
+									frm.set_value("amount", res.message[0][5]);
+									frm.set_value("total_price", res.message[0][6]);
 									frm.set_value("items", res.message[1]);
 									frm.refresh();
 								}

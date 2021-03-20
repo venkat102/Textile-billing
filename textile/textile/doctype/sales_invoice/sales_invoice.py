@@ -16,7 +16,7 @@ def customer_count(customer):
 
 @frappe.whitelist()
 def get_data(invoice):
-	return [frappe.db.get_value("Sales Invoice", {'name':invoice}, ["customer", "customer", "tax", "sgst", "cgst", "sgst_amount", "cgst_amount", 'amount', 'total_amount']), frappe.db.get_list("Sales Invoice Item", {'parent':invoice}, ['item_name', 'qty', 'unit' 'price', 'amount'])]
+	return [frappe.db.get_value("Sales Invoice", {'name':invoice}, ["customer", "tax", "sgst", "cgst", "sgst_amount", "cgst_amount", 'amount', 'total_price', 'payment_method', 'transport']), frappe.db.get_list("Sales Invoice Item", {'parent':invoice}, ['item_name', 'qty', 'unit', 'price', 'amount'])]
 
 @frappe.whitelist()
 def check_returned(invoice):

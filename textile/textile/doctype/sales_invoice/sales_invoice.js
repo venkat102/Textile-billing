@@ -56,7 +56,7 @@ frappe.ui.form.on('Sales Invoice', {
 		}
 	},
 	sales_invoice:function(frm){
-		if(frm.doc.invoice_no){
+		if(frm.doc.sales_invoice){
 			// if(frm.doc.invoice_no.includes('Returned')){
 			// 	frappe.throw("Can not return a returned invoice");
 			// 	frm.set_value("sales_invoice",'');
@@ -73,14 +73,15 @@ frappe.ui.form.on('Sales Invoice', {
 								callback:function(res){
 									console.log(res.message)
 									frm.set_value("customer", res.message[0][0]);
-									frm.set_value("discustomercount", res.message[0][1]);
-									frm.set_value("tax", res.message[0][2]);
-									frm.set_value("sgst", res.message[0][3]);
-									frm.set_value("cgst", res.message[0][4]);
-									frm.set_value("sgst_amount", res.message[0][5]);
-									frm.set_value("cgst_amount", res.message[0][6]);
-									frm.set_value("amount", res.message[0][7]);
-									frm.set_value("total_amount", res.message[0][7]);
+									frm.set_value("tax", res.message[0][1]);
+									frm.set_value("sgst", res.message[0][2]);
+									frm.set_value("cgst", res.message[0][3]);
+									frm.set_value("sgst_amount", res.message[0][4]);
+									frm.set_value("cgst_amount", res.message[0][5]);
+									frm.set_value("amount", res.message[0][6]);
+									frm.set_value("total_price", res.message[0][7]);
+									frm.set_value("payment_method", res.message[0][8]);
+									frm.set_value("transport", res.message[0][9]);
 									frm.set_value("items", res.message[1]);
 									frm.refresh();
 								}
