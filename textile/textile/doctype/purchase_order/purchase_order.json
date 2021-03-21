@@ -1,53 +1,36 @@
 {
  "actions": [],
- "autoname": "format:{customer}-{customer_ref_no}",
+ "autoname": "format:PO-{DD}-{MM}-{####}",
  "creation": "2021-03-19 00:17:11.661356",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "customer",
   "column_break_2",
-  "customer_ref_no",
   "date",
   "order_date",
   "section_break_7",
   "items",
   "section_break_9",
-  "tax",
-  "sgst",
-  "cgst",
   "column_break_11",
-  "amount",
-  "sgst_amount",
-  "cgst_amount",
   "total_price",
   "amended_from"
  ],
  "fields": [
   {
-   "fieldname": "customer",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Customer",
-   "options": "Customer",
-   "reqd": 1
-  },
-  {
    "fieldname": "column_break_2",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "customer_ref_no",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_preview": 1,
-   "label": "Customer Ref No"
   },
   {
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date"
+  },
+  {
+   "fieldname": "order_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Order Date"
   },
   {
    "fieldname": "section_break_7",
@@ -65,41 +48,8 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "tax",
-   "fieldtype": "Select",
-   "label": "Tax",
-   "options": "0%\n0.25%\n3%\n5%\n12%\n18%\n28%"
-  },
-  {
-   "fieldname": "sgst",
-   "fieldtype": "Read Only",
-   "label": "SGST %"
-  },
-  {
-   "fieldname": "cgst",
-   "fieldtype": "Read Only",
-   "label": "CGST %",
-   "precision": "2"
-  },
-  {
    "fieldname": "column_break_11",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "amount",
-   "fieldtype": "Read Only",
-   "in_list_view": 1,
-   "label": "Amount"
-  },
-  {
-   "fieldname": "sgst_amount",
-   "fieldtype": "Read Only",
-   "label": "SGST Amount"
-  },
-  {
-   "fieldname": "cgst_amount",
-   "fieldtype": "Read Only",
-   "label": "CGST Amount"
   },
   {
    "fieldname": "total_price",
@@ -111,23 +61,17 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Sales Order",
+   "options": "Purchase Order",
    "print_hide": 1,
    "read_only": 1
-  },
-  {
-   "fieldname": "order_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "Order Date"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2021-03-20 23:58:58.396573",
+ "modified": "2021-03-21 18:15:34.413474",
  "modified_by": "Administrator",
  "module": "Textile",
- "name": "Sales Order",
+ "name": "Purchase Order",
  "owner": "Administrator",
  "permissions": [
   {

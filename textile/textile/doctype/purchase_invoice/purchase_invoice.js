@@ -68,13 +68,15 @@ frappe.ui.form.on('Purchase Invoice', {
 								args:{'invoice': frm.doc.purchase_invoice},
 								callback:function(res){
 									console.log(res.message)
-									frm.set_value("tax", res.message[0][0]);
-									frm.set_value("sgst", res.message[0][1]);
-									frm.set_value("cgst", res.message[0][2]);
-									frm.set_value("sgst_amount", res.message[0][3]);
-									frm.set_value("cgst_amount", res.message[0][4]);
-									frm.set_value("amount", res.message[0][5]);
-									frm.set_value("total_price", res.message[0][6]);
+									frm.set_value("company_name", res.message[0][0]);
+									frm.set_value("mode_of_payment", res.message[0][1]);
+									frm.set_value("tax", res.message[0][2]);
+									frm.set_value("sgst", res.message[0][3]);
+									frm.set_value("cgst", res.message[0][4]);
+									frm.set_value("sgst_amount", res.message[0][5]);
+									frm.set_value("cgst_amount", res.message[0][6]);
+									frm.set_value("amount", res.message[0][7]);
+									frm.set_value("total_price", res.message[0][8]);
 									frm.set_value("items", res.message[1]);
 									frm.refresh();
 								}

@@ -18,7 +18,7 @@
  ],
  "category": "Modules",
  "charts": [],
- "creation": "2021-03-19 22:52:13.073206",
+ "creation": "2021-03-21 18:02:55.201167",
  "developer_mode_only": 0,
  "disable_user_customization": 0,
  "docstatus": 0,
@@ -28,62 +28,26 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "label": "Zero to Infinity",
- "modified": "2021-03-21 18:11:36.499851",
+ "label": "Report",
+ "modified": "2021-03-21 18:10:57.784276",
  "modified_by": "Administrator",
  "module": "Textile",
- "name": "Zero to Infinity",
+ "name": "Report",
  "owner": "Administrator",
- "pin_to_bottom": 1,
+ "pin_to_bottom": 0,
  "pin_to_top": 0,
  "shortcuts": [
   {
-   "doc_view": "List",
-   "label": "Customer",
-   "link_to": "Customer",
-   "type": "DocType"
+   "doc_view": "Report Builder",
+   "label": "Sales Invoice Report",
+   "link_to": "Sales Invoice Report",
+   "type": "Report"
   },
   {
-   "doc_view": "List",
-   "label": "Sales Invoice",
-   "link_to": "Sales Invoice",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "Payment Entry",
-   "link_to": "Payment Entry",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "Sales Order",
-   "link_to": "Sales Order",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "Estimate",
-   "link_to": "Estimate",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "Delivery Chalan",
-   "link_to": "Delivery Chalan",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "Mode of Payment",
-   "link_to": "Mode of Payment",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "UOM",
-   "link_to": "Unit",
-   "type": "DocType"
+   "doc_view": "Report Builder",
+   "label": "Purchase Invoice Report",
+   "link_to": "Purchase Invoice Report",
+   "type": "Report"
   }
  ]
 }

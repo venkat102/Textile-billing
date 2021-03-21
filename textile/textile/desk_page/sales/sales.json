@@ -18,7 +18,7 @@
  ],
  "category": "Modules",
  "charts": [],
- "creation": "2021-03-19 22:52:13.073206",
+ "creation": "2021-03-21 17:58:33.989907",
  "developer_mode_only": 0,
  "disable_user_customization": 0,
  "docstatus": 0,
@@ -28,37 +28,19 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "label": "Zero to Infinity",
- "modified": "2021-03-21 18:11:36.499851",
+ "label": "Sales",
+ "modified": "2021-03-21 18:07:42.813120",
  "modified_by": "Administrator",
  "module": "Textile",
- "name": "Zero to Infinity",
+ "name": "Sales",
  "owner": "Administrator",
- "pin_to_bottom": 1,
- "pin_to_top": 0,
+ "pin_to_bottom": 0,
+ "pin_to_top": 1,
  "shortcuts": [
-  {
-   "doc_view": "List",
-   "label": "Customer",
-   "link_to": "Customer",
-   "type": "DocType"
-  },
   {
    "doc_view": "List",
    "label": "Sales Invoice",
    "link_to": "Sales Invoice",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "Payment Entry",
-   "link_to": "Payment Entry",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "Sales Order",
-   "link_to": "Sales Order",
    "type": "DocType"
   },
   {
@@ -75,14 +57,8 @@
   },
   {
    "doc_view": "List",
-   "label": "Mode of Payment",
-   "link_to": "Mode of Payment",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "UOM",
-   "link_to": "Unit",
+   "label": "Customer",
+   "link_to": "Customer",
    "type": "DocType"
   }
  ]
