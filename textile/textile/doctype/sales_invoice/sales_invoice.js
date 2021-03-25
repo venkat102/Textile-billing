@@ -8,7 +8,7 @@ frappe.ui.form.on('Sales Invoice', {
 			callback: function(res){
 				// frm.set_value("sales_invoice_number", res.message[0][0]);
 				frm.set_value("date", res.message[1]);
-				frm.refresh_field("sales_invoice_number");
+				frm.refresh_field("date");
 			}
 		})
 	},

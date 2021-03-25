@@ -7,7 +7,6 @@ frappe.ui.form.on('Estimate', {
 			method:"textile.textile.doctype.sales_invoice.sales_invoice.sales_invoice_count",
 			callback: function(res){
 				frm.set_value("date", res.message[1]);
-				frm.refresh_field("sales_invoice_number");
 			}
 		})
 	},

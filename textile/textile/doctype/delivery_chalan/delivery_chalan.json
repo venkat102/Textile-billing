@@ -61,7 +61,7 @@
    "fieldname": "items",
    "fieldtype": "Table",
    "label": "Items",
-   "options": "Delivery Chalan Item",
+   "options": "Sales Invoice Item",
    "reqd": 1
   },
   {
@@ -91,8 +91,10 @@
   },
   {
    "fieldname": "amount",
-   "fieldtype": "Read Only",
-   "label": "Amount"
+   "fieldtype": "Float",
+   "label": "Amount",
+   "precision": "2",
+   "read_only": 1
   },
   {
    "fieldname": "sgst_amount",
@@ -106,8 +108,10 @@
   },
   {
    "fieldname": "total_price",
-   "fieldtype": "Read Only",
-   "label": "Total Price"
+   "fieldtype": "Float",
+   "label": "Total Price",
+   "precision": "2",
+   "read_only": 1
   },
   {
    "fieldname": "amended_from",
@@ -121,7 +125,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2021-03-19 22:34:46.552739",
+ "modified": "2021-03-23 01:46:02.269438",
  "modified_by": "Administrator",
  "module": "Textile",
  "name": "Delivery Chalan",

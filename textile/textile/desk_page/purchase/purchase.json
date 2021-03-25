@@ -29,7 +29,7 @@
  "is_default": 0,
  "is_standard": 1,
  "label": "Purchase",
- "modified": "2021-03-21 18:11:43.799383",
+ "modified": "2021-03-21 18:55:54.957697",
  "modified_by": "Administrator",
  "module": "Textile",
  "name": "Purchase",
@@ -47,6 +47,12 @@
    "doc_view": "List",
    "label": "Purchase Invoice",
    "link_to": "Purchase Invoice",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Purchase Order",
+   "link_to": "Purchase Order",
    "type": "DocType"
   }
  ]
